@@ -1,0 +1,17 @@
+<form [formGroup]="myForm">
+  <div class="form-group">
+    <label for="numero1">Numero 1</label>
+    <input type="number" class="form-control w-25" id="numero1" name="numero1" onfocus="this.value=''" [formControl]="myForm.controls['numero1']">
+  </div>
+  <div class="form-group">
+    <label for="numero2">Numero 2</label>
+    <input type="number" class="form-control w-25" id="numero2" name="numero2" onfocus="this.value=''" [formControl]="myForm.controls['numero2']">
+  </div>
+  <div *ngIf="!myForm.valid" class="alert alert-danger">Il form non è valido</div>
+  <button type="button" class="btn btn-small btn-warning m-2 btn-outline-dark" (click)="somma()">+</button>
+  <button type="button" class="btn btn-small btn-warning m-2 btn-outline-dark" (click)="sottrazione()">-</button>
+  <button type="button" class="btn btn-small btn-warning m-2 btn-outline-dark" (click)="moltiplicazione()">*</button>
+  <button type="button" class="btn btn-small btn-warning m-2 btn-outline-dark" (click)="divisione()">/</button>
+</form>
+
+<app-ris-component [risultato]="risultato" [arrayNumeri]="arrayNumeri"></app-ris-component>

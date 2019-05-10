@@ -1,0 +1,11 @@
+<div>{{ risultato }}</div>
+<span *ngFor="let n of arrayNumeri">{{ n }} </span><br>
+<button type="button" class="btn btn-outline-dark btn-warning mt-3 mb-3" (click)="toggleVar()">Mostra/Nascondi email</button>
+<form [hidden]="hideEmail" [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+  <div class="form-group d-inline-block w-25">
+    <label for="email" class="mr-1">Email:</label>
+    <input type="email" class="form-control" onfocus="this.value=''" id="email" name="email" [formControl]="myForm.controls['email']">
+  </div>
+  <button type="button" type="submit" class="btn btn-outline-dark btn-warning ml-3 d-inline-block">Invia Email</button>
+</form>
+
